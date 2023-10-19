@@ -1,0 +1,18 @@
+{
+  "folders": [
+    {
+      "path": ".."
+    }
+  ],
+  "settings": {
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "files.eol": "\n",
+    "files.insertFinalNewline": true
+  },
+  "extensions": {
+    "recommendations": ["esbenp.prettier-vscode", "shopify.ruby-lsp"]
+  }
+}
