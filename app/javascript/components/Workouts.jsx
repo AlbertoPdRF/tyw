@@ -36,7 +36,7 @@ const Workouts = () => {
   const noWorkout = (
     <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
       <h4>
-        No workouts yet. Why not <Link to="/new_workout">create one</Link>?
+        No workouts yet. Why not <Link to="/workout">create one</Link>?
       </h4>
     </div>
   );
