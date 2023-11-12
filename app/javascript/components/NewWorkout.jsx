@@ -87,7 +87,7 @@ const NewWorkout = () => {
                 onChange={(event) => onChange(event, setTarget)}
               />
               <small id="targetHelp" className="form-text text-muted">
-                Introduce the muscle group(s) that you going to work.
+                Introduce the muscle group(s) targetted.
               </small>
             </div>
             <div className="form-group">
