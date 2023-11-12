@@ -94,13 +94,25 @@ const Workout = () => {
               }}
             />
           </div>
-          <div className="col-sm-12 col-lg-2">
+          <div className="col-sm-6 col-lg-1">
+            <button
+              type="button"
+              className="btn custom-button"
+              onClick={() => {
+                console.log(workout);
+                navigate('/workout', { state: workout });
+              }}
+            >
+              Duplicate
+            </button>
+          </div>
+          <div className="col-sm-6 col-lg-1">
             <button
               type="button"
               className="btn btn-danger"
               onClick={deleteWorkout}
             >
-              Delete workout
+              Delete
             </button>
           </div>
         </div>

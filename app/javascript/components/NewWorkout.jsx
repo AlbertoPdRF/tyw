@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const NewWorkout = () => {
+  const { state: duplicatedWorkout } = useLocation();
+
   const navigate = useNavigate();
-  const [date, setDate] = useState('');
-  const [target, setTarget] = useState('');
-  const [exercises, setExercises] = useState('');
-  const [comments, setComments] = useState('');
+  const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
+  const [target, setTarget] = useState(duplicatedWorkout?.target || '');
+  const [exercises, setExercises] = useState(
+    duplicatedWorkout?.exercises || ''
+  );
+  const [comments, setComments] = useState(duplicatedWorkout?.comments || '');
 
   const stripHtmlEntities = (str) => {
     return String(str)
@@ -68,6 +72,7 @@ const NewWorkout = () => {
             <div className="form-group">
               <label htmlFor="target">Date</label>
               <input
+                value={date}
                 type="date"
                 name="date"
                 id="date"
@@ -79,6 +84,7 @@ const NewWorkout = () => {
             <div className="form-group">
               <label htmlFor="target">Target</label>
               <input
+                value={target}
                 type="text"
                 name="target"
                 id="target"
@@ -93,6 +99,7 @@ const NewWorkout = () => {
             <div className="form-group">
               <label htmlFor="exercises">Exercises</label>
               <input
+                value={exercises}
                 type="text"
                 name="exercises"
                 id="exercises"
@@ -106,6 +113,7 @@ const NewWorkout = () => {
             </div>
             <label htmlFor="comments">Comments</label>
             <textarea
+              value={comments}
               className="form-control"
               id="comments"
               name="comments"
@@ -114,7 +122,7 @@ const NewWorkout = () => {
               onChange={(event) => onChange(event, setComments)}
             />
             <button type="submit" className="btn custom-button mt-3">
-              Create workout
+              Create
             </button>
             <Link to="/workouts" className="btn btn-link mt-3">
               Back to workouts
